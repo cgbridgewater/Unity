@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class ShowScore : MonoBehaviour
 {
+    // Keep track of high score
+
+
     // Keep track of a score from the start of the game
     private int score = 0;
     // Start is called before the first frame update

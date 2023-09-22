@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
         if(this.gameObject.tag == "BigsbyIcon")
         {
             GameObject scoreText = GameObject.Find("ScoreText");
-            scoreText.GetComponent<ShowScore>().incrementScore(200);
+            scoreText.GetComponent<ShowScore>().incrementScore(300);
             GameObject livesText = GameObject.Find("LivesText");
             livesText.GetComponent<ShowLives>().addLife();
         }

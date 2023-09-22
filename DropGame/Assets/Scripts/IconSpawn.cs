@@ -12,8 +12,8 @@ public class IconSpawn : MonoBehaviour
     [SerializeField]
     private float spawnInterval;
 
-    private float minX = -4.25f; 
-    private float maxX = 4.25f;
+    private float minX = -7.25f; 
+    private float maxX = 7.25f;
 
     // Create a sprite array
     [SerializeField]

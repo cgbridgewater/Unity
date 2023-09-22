@@ -11,6 +11,10 @@ public class ShowLives : MonoBehaviour
 {
     // initial lives count
     private int lives = 3;
+
+    // bonus counter
+    private int bonusCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,7 @@ public class ShowLives : MonoBehaviour
         {
             this.lives -= 1;
             GetComponent<Text>().text = "Lives: " + this.lives;
+            this.bonusCount = 0;
             // add logic if lives == 0
             if(lives == 0)
             {
@@ -31,8 +36,13 @@ public class ShowLives : MonoBehaviour
 
     public void addLife()
         {
+            this.bonusCount += 1;
+            if(bonusCount == 5)
+            {
             this.lives += 1;
             GetComponent<Text>().text = "Lives: " + this.lives;
+            bonusCount = 0;
+            }
         }
     
 
