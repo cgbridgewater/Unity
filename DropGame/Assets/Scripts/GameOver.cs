@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    // function to return to main menu
     public void MainMenu()
     {
         SceneManager.LoadSceneAsync(0);

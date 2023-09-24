@@ -7,18 +7,15 @@ public class IconSpawn : MonoBehaviour
     // serializing a field tells it to show up in my inspector as something I can fill in
     [SerializeField]
     private GameObject prefabToSpawn;
-    
     // The interval at which the spawn happens
     [SerializeField]
     private float spawnInterval;
-
+    // set ranges of left and right edges to drop icon objects
     private float minX = -7.0f; 
     private float maxX = 7.5f;
-
     // Create a sprite array
     [SerializeField]
     private Sprite[] simpsons;
-
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +23,7 @@ public class IconSpawn : MonoBehaviour
         // Invoke the IconSpawn method at a particular interval
         InvokeRepeating("iconSpawn", this.spawnInterval, this.spawnInterval*.8f);
     }
-
+    // method to create an icon object
     private void iconSpawn()
     {
         // Create a new Icon
