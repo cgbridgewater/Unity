@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
         // destroy object after time out, giving enough time to clear game screen
         Destroy(this.gameObject, 10);
     }
-
+    // method for clicking on objects
     void OnMouseDown()
     {
         Destroy(this.gameObject);
