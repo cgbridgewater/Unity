@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class ShowScore : MonoBehaviour
 {
-    // Keep track of high score
-
-
     // Keep track of a score from the start of the game
     private int score = 0;
     // Start is called before the first frame update
@@ -17,7 +14,7 @@ public class ShowScore : MonoBehaviour
         // Get default score
         GetComponent<Text>().text = "Score: " + this.score;
     }
-
+    // method to change score
     public void incrementScore(int val)
     {
         // Update score and add it to previous score
@@ -27,5 +24,4 @@ public class ShowScore : MonoBehaviour
         }
         GetComponent<Text>().text = "Score: " + this.score;
     }
-
 }

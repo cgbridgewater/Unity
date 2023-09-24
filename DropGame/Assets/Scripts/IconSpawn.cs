@@ -12,8 +12,8 @@ public class IconSpawn : MonoBehaviour
     [SerializeField]
     private float spawnInterval;
 
-    private float minX = -7.25f; 
-    private float maxX = 7.25f;
+    private float minX = -7.0f; 
+    private float maxX = 7.5f;
 
     // Create a sprite array
     [SerializeField]
@@ -24,7 +24,7 @@ public class IconSpawn : MonoBehaviour
     void Start()
     {
         // Invoke the IconSpawn method at a particular interval
-        InvokeRepeating("iconSpawn", this.spawnInterval, this.spawnInterval);
+        InvokeRepeating("iconSpawn", this.spawnInterval, this.spawnInterval*.8f);
     }
 
     private void iconSpawn()

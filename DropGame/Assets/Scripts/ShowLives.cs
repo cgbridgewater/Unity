@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 // This allows us to use the text
 using UnityEngine.UI;
-
+// this allows us to change scenes
 using UnityEngine.SceneManagement;
 
 
@@ -30,7 +30,9 @@ public class ShowLives : MonoBehaviour
             // add logic if lives == 0
             if(lives == 0)
             {
-                Time.timeScale = 0;
+                {
+                    SceneManager.LoadSceneAsync(2);
+                }
             }
         }
 
@@ -39,9 +41,12 @@ public class ShowLives : MonoBehaviour
             this.bonusCount += 1;
             if(bonusCount == 5)
             {
-            this.lives += 1;
-            GetComponent<Text>().text = "Lives: " + this.lives;
-            bonusCount = 0;
+                if(lives < 5)
+                {
+                    this.lives += 1;
+                    GetComponent<Text>().text = "Lives: " + this.lives;
+                    bonusCount = 0;
+                }
             }
         }
     
