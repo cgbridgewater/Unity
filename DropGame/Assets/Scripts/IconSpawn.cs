@@ -11,8 +11,8 @@ public class IconSpawn : MonoBehaviour
     [SerializeField]
     private float spawnInterval;
     // set ranges of left and right edges to drop icon objects
-    private float minX = -7.0f; 
-    private float maxX = 7.5f;
+    private float minX = -6.25f; 
+    private float maxX = 6.25f;
     // Create a sprite array
     [SerializeField]
     private Sprite[] simpsons;
