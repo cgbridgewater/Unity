@@ -89,7 +89,7 @@ public class SceneContoller : MonoBehaviour
             attempt.GetComponent<ShowAttempts>().incrementAttempts(1);
             matches ++;
             if(matches == 16){
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
             }
         } else {
             // we do not have a match increase attempt count +1
@@ -105,7 +105,7 @@ public class SceneContoller : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
 }

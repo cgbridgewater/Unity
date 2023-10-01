@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 19a3affac70fcbb41b56f49ca29cc453, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e8487c273bac754585155204329f1cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardBack: {fileID: 6225753619775496305}
+  image: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!61 &3478350752054604926
 BoxCollider2D:
   m_ObjectHideFlags: 0

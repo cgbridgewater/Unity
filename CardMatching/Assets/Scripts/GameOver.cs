@@ -5,18 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-
-    //     void Start()
-    // {
-    //     // // Get default score
-    //     // GetComponent<ShowAttempts>().GetAttempts();
-    // }
-
-
-
     // function to restart the game
-    public void RestartGame()
+    public void MemoryMenu()
     {
         SceneManager.LoadSceneAsync(0);
     }
+
+    // function to return to memory menu
+    public void ExitGame()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
+
+    // // function to return to the main menu page
+    // public void ReturnToMain()
+    // {
+    //     SceneManager.LoadSceneAsync(0);
+    // }
 }

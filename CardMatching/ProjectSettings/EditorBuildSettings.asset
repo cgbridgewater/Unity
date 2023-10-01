@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 8c97224db2e2e8248b3d80f027893eea
+  - enabled: 1
     path: Assets/Scenes/CardFlip Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
