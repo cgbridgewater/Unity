@@ -25,7 +25,6 @@ public class SceneContoller : MonoBehaviour
         Vector3 startPos = origionalCard.transform.position;
         // ensure matches is zeroed out
         matches = 0;
-
         //This represents our 4 sprite options as index values
         List<int> numbers = new List<int>() {0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7};
         numbers = Shuffle(numbers); 
@@ -54,7 +53,7 @@ public class SceneContoller : MonoBehaviour
             }
         }
     }
-
+    // randomized shuffle
     private List<int> Shuffle(List<int> arr)
     {
         for(int i = 0; i < arr.Count; i++)
@@ -66,7 +65,7 @@ public class SceneContoller : MonoBehaviour
         }
         return arr;
     }
-
+    // method to check which card and if flippable
     public void CardRevealed(MemoryCard card)
     {
         if(_firstChoice == null)
@@ -78,7 +77,7 @@ public class SceneContoller : MonoBehaviour
             StartCoroutine(CheckMatch());
         }
     }
-
+    // Method to check cards for match
     private IEnumerator CheckMatch()
     {
         // match check
@@ -89,7 +88,7 @@ public class SceneContoller : MonoBehaviour
             attempt.GetComponent<ShowAttempts>().incrementAttempts(1);
             matches ++;
             if(matches == 16){
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(6);
             }
         } else {
             // we do not have a match increase attempt count +1
@@ -102,10 +101,9 @@ public class SceneContoller : MonoBehaviour
         _firstChoice = null;
         _secondChoice = null;
     }
-
+    // method to reset game
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
-
 }

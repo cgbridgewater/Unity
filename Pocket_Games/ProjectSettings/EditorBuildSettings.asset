@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SimpsonsGame/SimpsonsGameOver.unity
     guid: 126f0d9c45deb344a95ceb15189c5504
+  - enabled: 1
+    path: Assets/Scenes/MemoryGame/MemoryIntro.unity
+    guid: b6803dbbbef233d46a9fb399460ac8e5
+  - enabled: 1
+    path: Assets/Scenes/MemoryGame/CardFlip Game.unity
+    guid: 172a4764dcd0d524a92e54716ab86151
+  - enabled: 1
+    path: Assets/Scenes/MemoryGame/MemoryGameOver.unity
+    guid: c5f014a8a1ad04e409a56c39cb4467bf
   m_configObjects: {}
