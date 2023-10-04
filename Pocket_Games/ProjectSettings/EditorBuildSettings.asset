@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MemoryGame/MemoryGameOver.unity
     guid: c5f014a8a1ad04e409a56c39cb4467bf
+  - enabled: 1
+    path: Assets/Scenes/CupsGame/CupsIntro.unity
+    guid: 51354d3c29064a245a6412860f7f76c3
   m_configObjects: {}
