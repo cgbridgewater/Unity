@@ -8,6 +8,9 @@ public class SceneContoller : MonoBehaviour
     public MemoryCard origionalCard;
     public Sprite[] images;
 
+    public AudioSource src;
+    public AudioClip sfx1, sfx2, sfx3, sfx4;
+
     public const int gridRows = 4;
     public const int gridCols = 8;
     public const float offsetX = 3.0f;
@@ -21,6 +24,8 @@ public class SceneContoller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        src.clip = sfx4;
+        src.Play();
         // get start position
         Vector3 startPos = origionalCard.transform.position;
         // ensure matches is zeroed out
@@ -72,10 +77,14 @@ public class SceneContoller : MonoBehaviour
         if(_firstChoice == null)
         {
             _firstChoice = card;
+            src.clip = sfx1;
+            src.Play();
         } else {
             _secondChoice = card;
             // then check for match
             StartCoroutine(CheckMatch());
+            src.clip = sfx1;
+            src.Play();
         }
     }
 
@@ -85,19 +94,24 @@ public class SceneContoller : MonoBehaviour
         if(_firstChoice.id == _secondChoice.id)
         {
             // we have a match increase attempt count +1
+            yield return new WaitForSeconds(.5f);
             GameObject attempt = GameObject.Find("AttemptCounter");
             attempt.GetComponent<ShowAttempts>().incrementAttempts(1);
             matches ++;
             if(matches == 16){
                 SceneManager.LoadScene(2);
             }
+            src.clip = sfx2;
+            src.Play();
         } else {
             // we do not have a match increase attempt count +1
-            yield return new WaitForSeconds(.7f);
+            yield return new WaitForSeconds(.5f);
             _firstChoice.Unreveal();
             _secondChoice.Unreveal();
             GameObject attempt = GameObject.Find("AttemptCounter");
             attempt.GetComponent<ShowAttempts>().incrementAttempts(1);
+            src.clip = sfx3;
+            src.Play();
         }
         _firstChoice = null;
         _secondChoice = null;
@@ -106,6 +120,12 @@ public class SceneContoller : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(1);
+    }
+
+    // function to return to memory menu
+    public void ExitGame()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 
 }
