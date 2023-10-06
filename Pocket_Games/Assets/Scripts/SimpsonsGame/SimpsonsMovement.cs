@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         // set drop motion vector2(angle,speed)
         this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-1f, 1f),Random.Range(-2.1f, -6.3f));
         // destroy object after time out, giving enough time to clear game screen

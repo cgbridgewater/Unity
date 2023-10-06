@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class IntroScene : MonoBehaviour
 {
+    // Audio
+    public AudioSource src;
+    public AudioClip sfx1;
+
+    void Start()
+    {
+        src.clip = sfx1;
+        src.Play();
+    }
+
     // function to start game scene
     public void PlayGame()
     {

@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneContoller : MonoBehaviour
 {
+    // Card declaration
     public MemoryCard origionalCard;
     public Sprite[] images;
 
+    // Sound FX declaration
+    public AudioSource src;
+    public AudioClip sfx1, sfx2, sfx3, sfx4;
+
+    // Grid Settings
     public const int gridRows = 4;
     public const int gridCols = 8;
     public const float offsetX = 3.0f;
@@ -21,6 +27,8 @@ public class SceneContoller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        src.clip = sfx2;
+        src.Play();
         // get start position
         Vector3 startPos = origionalCard.transform.position;
         // ensure matches is zeroed out
@@ -71,8 +79,12 @@ public class SceneContoller : MonoBehaviour
         if(_firstChoice == null)
         {
             _firstChoice = card;
+            src.clip = sfx1;
+            src.Play();
         } else {
             _secondChoice = card;
+            src.clip = sfx1;
+            src.Play();
             // then check for match
             StartCoroutine(CheckMatch());
         }
@@ -84,6 +96,7 @@ public class SceneContoller : MonoBehaviour
         if(_firstChoice.id == _secondChoice.id)
         {
             // we have a match increase attempt count +1
+            yield return new WaitForSeconds(.5f);
             GameObject attempt = GameObject.Find("AttemptCounter");
             attempt.GetComponent<ShowAttempts>().incrementAttempts(1);
             matches ++;
@@ -92,7 +105,7 @@ public class SceneContoller : MonoBehaviour
             }
         } else {
             // we do not have a match increase attempt count +1
-            yield return new WaitForSeconds(.7f);
+            yield return new WaitForSeconds(.5f);
             _firstChoice.Unreveal();
             _secondChoice.Unreveal();
             GameObject attempt = GameObject.Find("AttemptCounter");
@@ -104,6 +117,9 @@ public class SceneContoller : MonoBehaviour
     // method to reset game
     public void Restart()
     {
-        SceneManager.LoadScene(5);
+        GameObject attempts = GameObject.Find("AttemptCounter");
+        if((attempts.GetComponent<ShowAttempts>().GetAttempts()) > 0){
+            SceneManager.LoadScene(5);
+        }
     }
 }
